@@ -1,0 +1,23 @@
+.meal{
+    padding: 15px 60px;
+    text-align: center;
+    margin: auto;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.meal:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.meal p{
+   color: gray;
+   font-size: 10;
+   margin: 5px 0;
+}
+.meal img{
+    width: 100%;
+    margin-bottom: 18px;
+}
+.meal h6{
+   margin-bottom: 5px;
+   box-shadow: none;
+}

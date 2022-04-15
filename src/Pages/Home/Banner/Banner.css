@@ -1,0 +1,51 @@
+.banner{
+    background-image: url(../../../images//bannerbackground.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px;
+    margin-top: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner input{
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    width: 350px;
+    padding: 7px 20px;
+    margin-bottom: 70px;
+    margin-top:10px;
+}
+.banner button{
+    background: rgba(255, 99, 71, 0.785);
+    border: 1px solid tomato;
+    border-radius: 25px;
+    padding: 7px 30px;
+    color: #fff;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+.sreachfrom{
+    position: relative;
+    text-align: center;
+}
+@media screen and (max-width:770px) {
+    .banner{
+        height: auto;
+        padding: 30px;
+    }
+    .banner h1{
+        font-size: 25px;
+        text-align: center;
+    }
+    .banner button{
+        right: 0;
+    }
+    .banner input{
+        width: 100%;
+    }
+}

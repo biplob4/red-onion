@@ -1,0 +1,21 @@
+.cartIcon {
+    margin-right: 30px;
+    margin-top: 5px;
+}
+.loginBtn{
+    color: black;
+    font-size: 18px;
+    margin-right:10px;
+    border: none;
+    background: #fff;
+    font-weight: 500;
+}
+.signupBtn{
+    padding: 4px 10px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    border: 1px solid tomato;
+    background: tomato;
+    border-radius: 25px;
+}
