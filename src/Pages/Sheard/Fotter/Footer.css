@@ -1,0 +1,12 @@
+.fotter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: gray;
+    color: rgb(196, 189, 189);
+}
+.fotter img{
+    width: 200px;
+    margin: 0px auto;
+}

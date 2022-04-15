@@ -1,29 +1,24 @@
 import React, { useState } from 'react';
 import { Button, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import useMeal from '../../../../Utilitis/useMeal';
 import Brakfast from '../Brakfast/Brakfast';
 import './Meal.css'
 
 const Meal = () => {
     const [meals, setMeals] = useMeal();
-    const brakfastMeal = meals.filter(meal => (meal.time === "Breakfast"))
+    const [meal,setMeal] =useState([]);
+    const brakfastMeal = meals.filter(meal =>(meal.time === "Breakfast"));
     const lunchMeal = meals.filter(meal => (meal.time === "Lunch"));
     const dinnerMeal = meals.filter(meal => (meal.time === "Dinner"))
-   
-    const vvv = () =>{
-        if(brakfastHandeler()){
-         return meals.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>);
-        }
-    }
+ 
     const dinnerHandeler =()=>{
-        return dinnerMeal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>);
+       setMeal(dinnerMeal)
     }
     const lunchHandeler =()=>{
-       setMeals(lunchMeal)
+       setMeal(lunchMeal)
     }
     const brakfastHandeler =()=>{
-       setMeals(brakfastMeal)
+        setMeal(brakfastMeal)
     }
 
     return (
@@ -42,10 +37,13 @@ const Meal = () => {
             <div className="">
                 <div className="container-sm meals">
                     {
-                       vvv()
+                    meal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>)
+                    }
+                    {
+                    brakfastMeal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>)
                     }
                 </div>
-                <Button className='d-block mx-auto px-5 btn-secondary my-4'>Chack Out Your Food</Button>
+                <Button className='d-block mx-auto px-5 btn-secondary mb-5 mt-3'>Chack Out Your Food</Button>
             </div>
         </div>
     );

@@ -23,7 +23,7 @@ const Header = () => {
                                <FontAwesomeIcon className='cartIcon' style={{fontSize:"20px",color:"black"}} icon={faCartPlus} />
                             </Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
-                               <button className='loginBtn'>Login</button>
+                              <Link to='/login'><button className='loginBtn'>Login</button></Link>
                             </Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                                <button className="signupBtn">Signup</button>

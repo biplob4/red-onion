@@ -1,0 +1,39 @@
+.chose{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.chose img{
+    width: 100%;
+    margin: 20px 0;
+}
+.chose p{
+    color: gray;
+    font-size: 14px;
+}
+.icon{
+   background: rgb(102, 190, 102);
+   color: aliceblue;
+   padding: 5px;
+   margin-left: 10px;
+   border-radius: 50%;
+   font-size: 12px;
+}
+.chose button{
+    text-decoration: none;
+    color: rgba(0, 0, 255, 0.818) ;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:770px) {
+    .chose{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:500px) {
+    .chose{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
