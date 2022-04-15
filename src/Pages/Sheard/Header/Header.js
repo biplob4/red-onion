@@ -19,13 +19,13 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className='ms-auto'>
-                            <Nav.Link href="#">
+                            <Nav.Link as={Link} to="/cart">
                                <FontAwesomeIcon className='cartIcon' style={{fontSize:"20px",color:"black"}} icon={faCartPlus} />
                             </Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                               <Link to='/login'><button className='loginBtn'>Login</button></Link>
                             </Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link eventKey={2} as={Link} to="/signup">
                                <button className="signupBtn">Signup</button>
                             </Nav.Link>
                         </Nav>

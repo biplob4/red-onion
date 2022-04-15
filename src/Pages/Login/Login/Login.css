@@ -1,0 +1,39 @@
+.login-from{
+    width: 35%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+.login-from input{
+    display: block;
+    margin: auto;
+    padding: 10px 15px;
+    width: 95%;
+    border: 1px solid lightgray;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-weight: 400;
+    color: rgb(144, 143, 143);
+}
+.from-btn {
+    background: tomato;
+    color: #fff !important;
+    width: 75% !important;
+}
+.from-style{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+@media screen and (max-width:770px) {
+    .login-from{
+        width: 100%;
+        padding: 10px;
+    }
+}
+@media screen and (max-width:1050px) {
+    .login-from{
+        width: 70%;
+        padding: 10px;
+    }
+}
