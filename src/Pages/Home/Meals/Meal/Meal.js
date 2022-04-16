@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Nav } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { MealContext } from '../../../../App';
 import useMeal from '../../../../Utilitis/useMeal';
 import Brakfast from '../Brakfast/Brakfast';
 import './Meal.css'
 
-const Meal = () => {
+const Meal = () =>{
+    const [cartQuantity,setCartQuantiay] =useContext(MealContext);
     const nevigate = useNavigate()
     const [meals, setMeals] = useMeal();
-    const [meal,setMeal] =useState([]);
-    const brakfastMeal = meals.filter(meal =>(meal.time === "Breakfast"));
+    const [meal, setMeal] = useState([]);
+    const brakfastMeal = meals.filter(meal => (meal.time === "Breakfast"));
     const lunchMeal = meals.filter(meal => (meal.time === "Lunch"));
     const dinnerMeal = meals.filter(meal => (meal.time === "Dinner"))
- 
-    const dinnerHandeler =()=>{
-       setMeal(dinnerMeal)
+
+    const dinnerHandeler = () => {
+        setMeal(dinnerMeal)
     }
-    const lunchHandeler =()=>{
-       setMeal(lunchMeal)
+    const lunchHandeler = () => {
+        setMeal(lunchMeal)
     }
-    const brakfastHandeler =()=>{
+    const brakfastHandeler = () => {
         setMeal(brakfastMeal)
     }
 
-    const handelCheckout = ()=>{
+    const handelCheckout = () => {
         nevigate("/cart")
     }
     return (
@@ -40,12 +42,12 @@ const Meal = () => {
                 </Nav.Item>
             </Nav>
             <div className="">
-                <div className="container-sm meals">
+                <div onClick={()=>setCartQuantiay(...cartQuantity,meal)} className="container-sm meals">
                     {
-                    meal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>)
+                        meal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>)
                     }
                     {
-                    brakfastMeal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>)
+                        brakfastMeal.map(meal => <Brakfast key={meal.id} meal={meal}></Brakfast>)
                     }
                 </div>
                 <Button onClick={handelCheckout} className='d-block mx-auto px-5 btn-secondary mb-5 mt-3'>Chack Out Your Food</Button>

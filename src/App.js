@@ -6,19 +6,28 @@ import Header from './Pages/Sheard/Header/Header';
 import Login from './Pages/Login/Login/Login'
 import Signup from './Pages/Login/Signup/Signup';
 import Cart from './Pages/Home/Cart/Cart';
+import { createContext, useState } from 'react';
+
+
+export const MealContext = createContext();
 
 function App() {
+  const [cartQuantity,setCartQuantiay] = useState([])
+  console.log(cartQuantity);
   return (
-    <div>
-      <Header/>
-      <Routes>
-        <Route path='/home' element={<Home/>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<Signup></Signup>}></Route>
-        <Route path='/cart' element={<Cart></Cart>}></Route>
-      </Routes>
-      <Footer/>
-    </div>
+    <MealContext.Provider value={[cartQuantity,setCartQuantiay]}>
+      <div>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/home' element={<Home />}></Route>
+          <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='/signup' element={<Signup></Signup>}></Route>
+          <Route path='/cart' element={<Cart></Cart>}></Route>
+        </Routes>
+        <Footer />
+      </div>
+    </MealContext.Provider>
   );
 }
 

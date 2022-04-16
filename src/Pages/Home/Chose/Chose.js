@@ -12,19 +12,19 @@ const Chose = () => {
             <h2 className='text-center mb-3 mt-5'>Why You Chose us</h2>
             <div className='container mt-5 chose'>
                 <div className="">
-                    <img src={chose1} alt="img" srcset="" />
+                    <img src={chose1} alt="img" />
                     <h5>Fast Delivary</h5>
                     <p>Keep your systems in sync with automatic web hook based notification each time link is paid and how we dream our future</p>
                     <button className='btn btn-link'>See more  <FontAwesomeIcon icon={faArrowRightLong} className="icon" /> </button>
                 </div>
                 <div className="">
-                    <img src={chose2} alt="img" srcset="" />
+                    <img src={chose2} alt="img" />
                     <h5>A Good Auto Responder</h5>
                     <p>Keep your systems in sync with automatic web hook based notification each time link is paid and how we dream our future</p>
                     <button className='btn btn-link'>See more  <FontAwesomeIcon icon={faArrowRightLong} className="icon" /> </button>
                 </div>
                 <div className="">
-                    <img src={chose3} alt="img" srcset="" />
+                    <img src={chose3} alt="img" />
                     <h5>Home Delivary</h5>
                     <p>Keep your systems in sync with automatic web hook based notification each time link is paid and how we dream our future</p>
                     <button className='btn btn-link'>See more  <FontAwesomeIcon icon={faArrowRightLong} className="icon" /> </button>

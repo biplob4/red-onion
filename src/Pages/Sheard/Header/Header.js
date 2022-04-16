@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import {faCartPlus} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo2.png';
 import './Header.css'
-import { Button } from 'bootstrap';
+import { MealContext } from '../../../App';
 
 
 const Header = () => {
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" variant="light">
@@ -22,7 +23,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/cart">
                                <FontAwesomeIcon className='cartIcon' style={{fontSize:"20px",color:"black"}} icon={faCartPlus} />
                             </Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link as={Link} to='/login' eventKey={2}>
                               <Link to='/login'><button className='loginBtn'>Login</button></Link>
                             </Nav.Link>
                             <Nav.Link eventKey={2} as={Link} to="/signup">
