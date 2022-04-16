@@ -1,13 +1,36 @@
 import React from 'react';
-import logo  from '../../../images/logo2.png';
-import { Link } from 'react-router-dom';
+import logo from '../../../images/logo2.png';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
-    const handelSubmit = (e) => {
+    const navigait = useNavigate();
+    const [updateProfile, updating] = useUpdateProfile(auth);
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+
+    if (user) {
+        navigait("/home")
+    }
+    if (loading) {
+        return (
+          <div className='d-flex justify-content-center align-items-center text-center text-primary'>
+            <h4>Loadding....</h4>
+          </div>
+        );
+    }
+    const handelSubmit = async (e) => {
         e.preventDefault();
-        const name = e.target.name.value;
+        const displayName = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        createUserWithEmailAndPassword(email, password);
+        await
+            updateProfile({ displayName });
+        toast('Updated profile');
     }
     return (
         <div className='mt-5 login-from'>
@@ -24,6 +47,7 @@ const Signup = () => {
                 <div style={{ height: "1.5px", background: "gray", width: "100%" }} className=""></div>
             </div>
             <Link style={{ textDecoration: "none" }} to="/login" className='text-primary text-center my-4 text-danger'>IF You Alrady Signup So ?<button className=' btn btn-link'>Please Login</button></Link>
+            <ToastContainer />
         </div>
     );
 };

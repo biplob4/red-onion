@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MealContext } from '../../../../App';
 import './Brakfast.css'
+
 
 const Brakfast = ({ meal }) => {
     return (

@@ -7,15 +7,15 @@ import Login from './Pages/Login/Login/Login'
 import Signup from './Pages/Login/Signup/Signup';
 import Cart from './Pages/Home/Cart/Cart';
 import { createContext, useState } from 'react';
+import RequireAuth from './Pages/Sheard/RuqireAuth/RequireAuath';
 
 
 export const MealContext = createContext();
 
 function App() {
-  const [cartQuantity,setCartQuantiay] = useState([])
-  console.log(cartQuantity);
+  const [cartQuantity, setCartQuantiay] = useState([]);
   return (
-    <MealContext.Provider value={[cartQuantity,setCartQuantiay]}>
+    <MealContext.Provider value={[cartQuantity, setCartQuantiay]}>
       <div>
         <Header />
         <Routes>
@@ -23,7 +23,9 @@ function App() {
           <Route path='/home' element={<Home />}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<Signup></Signup>}></Route>
-          <Route path='/cart' element={<Cart></Cart>}></Route>
+          <Route path='/cart' element={
+            <RequireAuth><Cart></Cart></RequireAuth>
+          }></Route>
         </Routes>
         <Footer />
       </div>
